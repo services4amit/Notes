@@ -1,0 +1,83 @@
+Installation/Configuration of ELK and Filebeat
+
+ Beats(Data collection) -> logstash(Data aggregation and processing) -> elasticsearch(Indexing and storage) -> Kibana(Analysis and visualization)
+
+Elasticsearch:
+STEP 1: Download: https://www.elastic.co/downloads/elasticsearch
+
+STEP 2: Once downloaded, open the command prompt and change the directory bin folder of Elasticsearch and execute the below command Elasticsearch service
+Run bin/elasticsearch (or bin\elasticsearch.bat on Windows)
+Ex:    C:\elastic_stack\elasticsearch-7.8.0\bin>elasticsearch.bat
+STEP 3: Point your browser at http://localhost:9200 to check if Elasticsearch service has started
+
+Kibana:
+STEP 1: Download: https://www.elastic.co/downloads/kibana
+STEP 2:
+a.	Open config/kibana.yml in an editor
+b.	Set elasticsearch.hosts to point at your Elasticsearch instance
+Ex:
+# The URLs of the Elasticsearch instances to use for all your queries.
+elasticsearch.hosts: ["http://localhost:9200"]
+
+STEP 3: Once downloaded, open the command prompt and change the directory bin folder of Kibana and execute the below command to start Kibana service
+Run bin/kibana (or bin\kibana.bat on Windows)
+STEP 4: Point your browser at http://localhost:5601  to check if Kibana service has started
+
+Logstash:
+STEP 1: Download and unzip Logstash: https://www.elastic.co/downloads/logstash
+STEP 2: Prepare Logstash.conf file
+STEP 3: Run the following command in command prompt  bin>logstash -f logstash.conf
+**Logstash conf file creation steps below**
+
+Filebeat:
+STEP1: Download and unzip Filebeat
+STEP2: Edit the filebeat.yml configuration file
+If you want to use Logstash to perform additional processing on the data collected by Filebeat, you need to configure Filebeat to use Logstash.
+1.	Change enabled to true
+2.	Paths: give the path of the folder that should be crawled and fetched 
+filebeat.inputs:
+
+# Each - is an input. Most options can be set at the input level, so
+# you can use different inputs for various configurations.
+# Below are the input specific configurations.
+
+- type: log
+
+  # Change to true to enable this input configuration.
+  enabled: true
+
+  # Paths that should be crawled and fetched. Glob based paths.
+  paths:
+    - C:\Users\testing\logs\*
+    #- c:\programdata\elasticsearch\logs\*
+
+3.	disable the Elasticsearch output by commenting it out and enable the Logstash output by uncommenting the logstash section:
+
+#----------------------------- Logstash output --------------------------------
+output.logstash:
+  hosts: ["localhost:5044"] 
+
+STEP3: To test your configuration file, change to the directory where the Filebeat binary is installed, and run Filebeat
+Bin>filebeat -e -c filebeat.yml
+
+
+Logstash.conf:
+Create a file named "logstash.conf" and save it in the same directory as Logstash.
+Logstash.conf
+
+input { stdin { } }
+output {
+  elasticsearch { 
+	hosts => ["localhost:9200"] 
+	index => “mytestindex”
+	}
+  stdout { codec => rubydebug }
+}
+
+
+
+
+
+
+
+	
