@@ -1,0 +1,132 @@
+npm install -g create-react-app
+
+
+create-react-app "app name"
+
+
+serve -s build -l 3007
+
+Webpack:
+https://www.valentinog.com/blog/babel/
+https://createapp.dev/
+
+
+Css
+https://css-tricks.com/handling-long-unexpected-content-css/
+
+Native in docker
+https://medium.com/@hmajid2301/running-expo-react-native-in-docker-ff9c4f2a4388
+
+
+Caching implementation:
+https://dev.to/flexdinesh/cache-busting-a-react-app-22lk
+
+Documenting js:
+https://softwarebrothers.co/blog/javascript-code-documentation/
+https://dev.to/joelnet/lets-talk-about-auto-generated-documentation-tools-for-javascript-49ol
+
+
+
+
+Lifecycle:
+https://reactjs.org/docs/state-and-lifecycle.html
+https://engineering.musefind.com/react-lifecycle-methods-how-and-when-to-use-them-2111a1b692b1
+https://www.codingame.com/playgrounds/8747/react-lifecycle-methods-render-and-componentdidmount
+https://www.robinwieruch.de/react-warning-cant-call-setstate-on-an-unmounted-component/
+https://busypeoples.github.io/post/react-component-lifecycle/
+https://programmingwithmosh.com/javascript/react-lifecycle-methods/
+
+Hooks:
+https://tylermcginnis.com/courses/react-hooks/?s=youtube-why-react-hooks
+
+
+Await:
+https://www.valentinog.com/blog/await-react/
+
+Usestate:
+https://blog.logrocket.com/a-guide-to-usestate-in-react-ecb9952e406c/
+
+Graph:
+https://devexpress.github.io/devextreme-reactive/react/chart/docs/guides/axes/
+
+
+
+Design:
+https://mobiscroll.com/
+https://colorlib.com/wp/react-dashboard-templates/
+
+
+Validations:
+https://medium.com/code-monkey/client-side-form-validation-in-react-40e367de47ba
+
+UI frameworks:
+https://www.codeinwp.com/blog/react-ui-component-libraries-frameworks/
+
+
+https://blog.logrocket.com/react-hooks-cheat-sheet-unlock-solutions-to-common-problems-af4caf699e70/
+
+
+Performance in conditions:
+https://medium.com/@cowi4030/optimizing-conditional-rendering-in-react-3fee6b197a20
+
+performance
+https://reactjs.org/docs/optimizing-performance.html
+
+
+
+Multer:
+https://deloittedevelopment.udemy.com/course/just-express-with-a-bunch-of-node-and-http-in-detail/
+
+
+React Testing
+h_ttps://w_ww.valentinog.com/blog/testing-react/
+ 
+ 
+ 
+TODO component shallow testing using Jest and Enzyme
+http_s://medium.com/swlh/react-testing-using-jest-along-with-code-coverage-report-7454b5ba0236
+React api testing
+http_s://medium.com/@manastunga/unit-testing-api-calls-in-react-enzyme-and-jest-133b87aaacb4
+Shallow testing react 16 : http_s://blog.carbonfive.com/shallow-testing-hooks-with-enzyme/
+http_s://stackoverflow.com/questions/55388587/how-should-i-test-react-hook-useeffect-making-an-api-call-with-typescript  
+
+
+
+also, one best practices that I came across about media queries in material-ui theme -> when we want to apply style to child element we should not use regular css like "div img{height:200px;}"... 
+instead use the seperate classname for that img tag -> using BEM css standard. it helps
+
+2. Also when using sudoclasses use the syntax similar to what we use in scss.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    When state and props changes:
+
+
+
+
+
+
+
+
+
+
